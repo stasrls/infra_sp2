@@ -6,27 +6,27 @@
 
 # Инструкции по запуску
 Для того чтобы развернуть образ на локальной машине, выполнитеследующиедействия.
-1. Авторизоваться через консоль:
+1. Авторизоваться:
 ```sh
-docker login -u <имя пользователя>
+docker login
 ```
 2. Загрузка образа с DockerHub
 ```sh
-docker pull stasrls/infra:v1
+docker pull stasrls/infra:v1.01
 ```
-3. Запустите Докер-контейнер с этим образом:
+3. Запустите Докер-контейнер:
 ```sh
 docker-compose up -d
 ```
-4. Зайдите внутрь контейнера через консоль Bash:
+4. Зайдите внутрь контейнера через консоль:
 ```
 docker exec -it <ID_контейнера> bash
 ```
 5. Выполинте последовательно миграции и создание суперпользователя:
 ```sh
-python manage.py makemigrations
-python manage.py migrate
-python manage.py createsuperuser
+docker-compose exec web python manage.py migrate
+docker-compose exec web python manage.py createsuperuser
+docker-compose exec web python manage.py collectstatic --no-input
 ```
 6. Наполнить БД тестовыми данными выполнив команду:
 ```sh
@@ -46,11 +46,11 @@ http://localhost/admin
 
 |Переменные              |Значение Default               |Описание                                            |
 |------------------------|-------------------------------|----------------------------------------------------|
-|`DB_ENGINE`             |`django.db.backends.postgresql`|Указываем движок БД                                 |
-|`DB_NAME`               |`postgres`                     |Имя базы данных                                     |
-|`POSTGRES_USER`         |no default                     |Логин дляподключения к БД                           |
-|`POSTGRES_PASSWORD`     |no default                     |Пароль для подключения к БД                         |
-|`DB_HOST`               |`db`                           |Название сервиса (контейнера)                       |
+|`DB_ENGINE`             |`django.db.backends.postgresql`|Указываем БД                                 |
+|`DB_NAME`               |`postgres`                     |Имя БД                                     |
+|`POSTGRES_USER`         |no default                     |Логин                           |
+|`POSTGRES_PASSWORD`     |no default                     |Пароль                          |
+|`DB_HOST`               |`db`                           |Название хоста                       |
 |`DB_PORT`               |5432                           |Порт для подключения к БД                           |
 
 ### Авторы
