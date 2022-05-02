@@ -18,25 +18,21 @@ docker pull stasrls/infra:v1.01
 ```sh
 docker-compose up -d
 ```
-4. Зайдите внутрь контейнера через консоль:
-```
-docker exec -it <ID_контейнера> bash
-```
-5. Выполинте последовательно миграции и создание суперпользователя:
+4. Выполинте последовательно миграции и создание суперпользователя:
 ```sh
 docker-compose exec web python manage.py migrate
 docker-compose exec web python manage.py createsuperuser
 docker-compose exec web python manage.py collectstatic --no-input
 ```
-6. Наполнить БД тестовыми данными выполнив команду:
+5. Наполнить БД тестовыми данными выполнив команду:
 ```sh
 python manage.py dbfill
 ```
-7. Запустить проект:
+6. Запустить проект:
 ```sh
 python manage.py runserver
 ```
-8. Проверьте доступность сервиса
+7. Проверьте доступность сервиса
 ```sh
 http://localhost/admin
 ```
