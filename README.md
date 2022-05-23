@@ -55,10 +55,8 @@ http://localhost/admin
 |`DB_HOST`               |`db`                           |Название хоста                       |
 |`DB_PORT`               |5432                           |Порт для подключения к БД                           |
 
-### Авторы
+### Автор
 [Шалгынов Станислав](https://github.com/stasrls)
-[Черноусов Антон](https://github.com/ChernousovAnton)
-[Толкачев Сергей](https://github.com/SPTolkachev)
 
 ### Лицензия
 The Unlicense
