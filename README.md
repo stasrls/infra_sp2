@@ -1,3 +1,9 @@
+![](https://img.shields.io/badge/Python-3.8-blue) 
+![](https://img.shields.io/badge/Django-2.2.16-green)
+![](https://img.shields.io/badge/DjangoRestFramework-3.12.4-red)
+![](https://img.shields.io/badge/Docker-3.8-yellow)
+![](https://img.shields.io/badge/DockerCompose-2.5.0-yellow)
+
 # api_yamdb
 Проект YaMDb собирает отзывы (Review) пользователей на произведения (Titles). Произведения делятся на категории: «Книги», «Фильмы», «Музыка».
 В каждой категории есть произведения: книги, фильмы или музыка. Например, в категории «Книги» могут быть произведения «Винни-Пух и все-все-все» и «Марсианские хроники», а в категории «Музыка» — песня «Давеча» группы «Насекомые» и вторая сюита Баха.
